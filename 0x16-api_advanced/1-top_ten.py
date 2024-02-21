@@ -2,26 +2,17 @@
 """function queries the Reddit API and then prints the titles
 of the first 10 hot posts listed for a give subreddit"""
 
-import requests
-
-
 def top_ten(subreddit):
-    """function queries subreddit and prints titles
-    of first 10 post"""
+    """Queries the Reddit API and returns the top 10 hot posts
+    of the subreddit"""
+    import requests
 
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
-    COUNT = 10
-
-    r = requests.get(
-        url=url, headers={"User-Agent": "My_User_Agent"}, allow_redirects=False
-    )
-    if r.status_code < 300:
-        posts = [
-            post["data"]["title"]
-            for post in r.json().get("data").get("children", [])
-            [:COUNT]
-            ]
-        for post in posts:
-            print(post)
+    sub_info = requests.get("https://www.reddit.com/r/{}/hot.json?limit=10"
+                            .format(subreddit),
+                            headers={"User-Agent": "My-User-Agent"},
+                            allow_redirects=False)
+    if sub_info.status_code >= 300:
+        print('None')
     else:
-        print(None)
+        [print(child.get("data").get("title"))
+         for child in sub_info.json().get("data").get("children")]
