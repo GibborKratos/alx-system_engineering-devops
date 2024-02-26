@@ -1,24 +1,32 @@
-Include /etc/ssh/ssh_config.d/*.conf
 
 Host *
-#   ForwardAgent no
-#   ForwardX11 no
-#   ForwardX11Trusted yes
-#   PasswordAuthentication no
-#   HostbasedAuthentication no
-#   GSSAPIAuthentication no
-#   GSSAPIDelegateCredentials no
-#   GSSAPIKeyExchange no
-#   GSSAPITrustDNS no
-#   BatchMode no
-#   CheckHostIP yes
-#   AddressFamily any
-#   ConnectTimeout 0
-#   StrictHostKeyChecking ask
-   IdentityFile ~/.ssh/school
-#   IdentityFile ~/.ssh/id_rsa
-#   IdentityFile ~/.ssh/id_dsa
-#   IdentityFile ~/.ssh/id_ecdsa
-#   IdentityFile ~/.ssh/id_ed25519
-#   Port 22
-                  
+ 20 #   ForwardAgent no
+ 21 #   ForwardX11 no
+ 22 #   ForwardX11Trusted yes
+ 23 #   RhostsRSAAuthentication no
+ 24 #   RSAAuthentication yes
+ 25 #   PasswordAuthentication no
+ 26 #   HostbasedAuthentication no
+ 27 #   GSSAPIAuthentication no
+ 28 #   GSSAPIDelegateCredentials no
+ 29 #   GSSAPIKeyExchange no
+ 30 #   GSSAPITrustDNS no
+ 31 #   BatchMode no
+ 32 #   CheckHostIP yes
+ 33 #   AddressFamily any
+ 34 #   ConnectTimeout 0
+ 35 #   StrictHostKeyChecking ask
+ 36 #   IdentityFile ~/.ssh/school
+ 37 #   IdentityFile ~/.ssh/identity
+ 38 #   IdentityFile ~/.ssh/id_rsa
+ 39 #   IdentityFile ~/.ssh/id_dsa
+ 40 #   IdentityFile ~/.ssh/id_ecdsa
+ 41 #   IdentityFile ~/.ssh/id_ed25519
+ 42 #   Port 22
+ 43 #   Protocol 2
+ 44 #   Cipher 3des
+ 45 #   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc
+ 46 #   MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160
+ 47 #   EscapeChar ~
+ 48 #   Tunnel no
+ 49 #   TunnelDevice any:any                  
