@@ -1,3 +1,18 @@
-#!/usr/bin/env bash
-# Kill gunicorn worker processe gracefully, with no downtime
-pkill -HUP gunicorn
+#!/bin/bash
+
+# Check if Gunicorn process is running
+if pgrep -x "gunicorn" > /dev/null
+then
+    echo "Reloading Gunicorn gracefully..."
+    
+    # Get the PID of the Gunicorn master process
+    MASTER_PID=$(pgrep -x "gunicorn" | head -n 1)
+    
+    # Send a HUP signal to the master process to gracefully reload
+    kill -HUP $MASTER_PID
+    
+    echo "Gunicorn reloaded gracefully"
+else
+    echo "Gunicorn is not running"
+fi
+
