@@ -10,7 +10,7 @@ def top_ten(subreddit):
         "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
     }
     params = {
-        "limit": 10
+        "limit": 100
     }
     response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
