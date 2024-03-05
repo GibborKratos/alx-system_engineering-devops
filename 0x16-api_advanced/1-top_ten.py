@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that should print hot posts on a given Reddit subreddit.
+function that should print hot posts on a given Reddit subreddit.
 """
 
 import requests
@@ -8,8 +8,7 @@ import requests
 
 def top_ten(subreddit):
     """Print the titles of the 10 hottest posts on a given subreddit."""
-    # Construct the URL for the subreddit's hot posts in JSON format
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+        url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
 
     # Define headers for the HTTP request, including User-Agent
     headers = {
@@ -20,13 +19,9 @@ def top_ten(subreddit):
     params = {
         "limit": 10
     }
-
-    # Send a GET request to the subreddit's hot posts page
-    response = requests.get(url, headers=headers, params=params,
+        response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
-
-    # Check if the response status code indicates a not-found error (404)
-    if response.status_code == 404:
+	if response.status_code == 404:
         print("None")
         return
 
